@@ -1,0 +1,12 @@
+.columns {
+  border: 2px solid black;
+  height: 20rem;
+  box-shadow: 4px 4px grey;
+  display: flex;
+  justify-content: center;
+  padding-top: 45px;
+}
+
+button {
+  margin: 30px!important;
+}
