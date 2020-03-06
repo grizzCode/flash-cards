@@ -4,9 +4,9 @@ let cardIndex = [1,2,3]
 
 // Array for card data:
 let cards = [
-  {front: "Front String A", back: "Back String A"},
-  {front: "Front String B", back: "Back String B"},
-  {front: "Front String C", back: "Back String C"},
+  {front: "Front String A", back: "It can manipulate the DOM of a webpage, giving you the ability to change, delete, or add HTML elements."},
+  {front: "Front String B", back: "Let x = ( ) => {\n#code goes here}"},
+  {front: "Front String C", back: "-- Arrays start counting at zero! -- Keep track of what functions are taking as input, and what they are returning. Don't forget a return statement if needed. --git  Check your block brackets."},
 ]
 
 //Flips given card over when clicked
