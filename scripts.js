@@ -82,7 +82,7 @@ function editCard(id ) {
     // generate edit card button:
     let newEditButton = document.createElement('button')
     newEditButton.setAttribute('type', 'button')
-    newEditButton.setAttribute('onclick', `editCard(${newId})`)
+    newEditButton.setAttribute('onclick', `editCard(${id})`)
     newEditButton.innerHTML = "Edit Card"
     // Generate delete button
     let newDeleteButton = document.createElement('button')
