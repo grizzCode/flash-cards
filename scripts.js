@@ -26,7 +26,14 @@ document.getElementById('newCardButton').onclick = () => {
   let div = document.createElement('div');
   div.setAttribute('class', 'four columns');
   div.setAttribute('id', id);
-  div.innerHTML = "This is a new card."
+  
+  //create a user input area
+  let form = document.createElement('form')
+  div.appendChild(form)
+  let input1 = document.createElement('input')
+  input1.setAttribute('type', 'text');
+  form.appendChild(input1)
+  // div.innerHTML = "This is a new card."
  
   
   row.appendChild(div);
