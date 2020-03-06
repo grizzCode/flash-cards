@@ -24,3 +24,7 @@ hr {
 button {
   margin: 12px!important;
 }
+
+input {
+  margin-left: 14px!important;
+}

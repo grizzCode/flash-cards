@@ -27,31 +27,41 @@ document.getElementById('newCardButton').onclick = () => {
   div.setAttribute('class', 'four columns');
   div.setAttribute('id', id);
   
-  //create two a user input areas
+  //create user input area for front of card:
   let form = document.createElement('form')
     div.appendChild(form)
   let input1 = document.createElement('input')
     input1.setAttribute('type', 'text');
+    input1.setAttribute('id', 'input1');
     input1.setAttribute('placeholder', 'Enter Card Front');
     input1.setAttribute('size', '45');
     form.appendChild(input1)
-    //create a hr tag for formatting
+    //create a hr tag for formatting:
       let hr = document.createElement('hr')
       form.appendChild(hr)
-  let input2 = document.createElement('input')
+  //create second user input area for back of card:
+      let input2 = document.createElement('input')
     input2.setAttribute('type', 'text');
+    input2.setAttribute('id', 'input2');
     input2.setAttribute('placeholder', 'Enter Card Back');
     input2.setAttribute('size', '45');
     form.appendChild(input2)
-  // create a submit button to save
+  //create a button to save:
   let saveButton = document.createElement('button')
     saveButton.setAttribute('type', 'button');
     saveButton.setAttribute('id', 'saveButton');
     saveButton.innerHTML = "Save New Card";
     form.appendChild(saveButton)
- 
-  
+
   row.appendChild(div);
+  
+  //Obatin input values once user enters them:
+  document.getElementById('saveButton').onclick = () => {
+    // let newCardId = id
+    var inputVal1 = document.getElementById("input1").value;
+    var inputVal2 = document.getElementById("input2").value;
+    console.log(inputVal1)
+    console.log(inputVal2)
+  }
 
 }
-
