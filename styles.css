@@ -3,7 +3,7 @@
   border-radius: 6px;
   height: 20rem;
   box-shadow: 4px 4px grey;
-  padding-top: 45px;
+  padding-top: 40px;
   margin: 10px!important;
 }
 
@@ -23,8 +23,13 @@ hr {
 
 button {
   margin: 12px!important;
+  
 }
 
 input {
   margin-left: 14px!important;
+}
+
+p {
+  padding-left: 14px;
 }
