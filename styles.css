@@ -16,3 +16,11 @@ nav {
   border: 2px solid grey;
   border-radius: 2px;
 }
+
+hr {
+  margin: 8px!important;
+}
+
+button {
+  margin: 12px!important;
+}

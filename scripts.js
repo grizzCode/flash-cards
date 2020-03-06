@@ -27,13 +27,28 @@ document.getElementById('newCardButton').onclick = () => {
   div.setAttribute('class', 'four columns');
   div.setAttribute('id', id);
   
-  //create a user input area
+  //create two a user input areas
   let form = document.createElement('form')
-  div.appendChild(form)
+    div.appendChild(form)
   let input1 = document.createElement('input')
-  input1.setAttribute('type', 'text');
-  form.appendChild(input1)
-  // div.innerHTML = "This is a new card."
+    input1.setAttribute('type', 'text');
+    input1.setAttribute('placeholder', 'Enter Card Front');
+    input1.setAttribute('size', '45');
+    form.appendChild(input1)
+    //create a hr tag for formatting
+      let hr = document.createElement('hr')
+      form.appendChild(hr)
+  let input2 = document.createElement('input')
+    input2.setAttribute('type', 'text');
+    input2.setAttribute('placeholder', 'Enter Card Back');
+    input2.setAttribute('size', '45');
+    form.appendChild(input2)
+  // create a submit button to save
+  let saveButton = document.createElement('button')
+    saveButton.setAttribute('type', 'button');
+    saveButton.setAttribute('id', 'saveButton');
+    saveButton.innerHTML = "Save New Card";
+    form.appendChild(saveButton)
  
   
   row.appendChild(div);
