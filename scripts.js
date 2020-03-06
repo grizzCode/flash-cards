@@ -58,7 +58,8 @@ document.getElementById('newCardButton').onclick = () => {
     form.appendChild(saveButton)
 
   row.appendChild(div);
-  
+ 
+  // ###################### SET NEW CARD ######################
   //Obatin input values once user enters them:
   document.getElementById('saveButton').onclick = () => {
     let inputVal1 = document.getElementById('input1').value;
@@ -73,14 +74,27 @@ document.getElementById('newCardButton').onclick = () => {
     // display new card front:
     let newFront = document.createElement('p')
     newFront.innerHTML = cards[(newId-1)].front
-    
+    // generate flip card button:
     let newFlipButton = document.createElement('button')
     newFlipButton.setAttribute('type', 'button')
     newFlipButton.setAttribute('onclick', `flipCard(${newId})`)
     newFlipButton.innerHTML = "Flip Card"
+    // generate edit card button:
+    let newEditButton = document.createElement('button')
+    newEditButton.setAttribute('type', 'button')
+    // newDeleteButton.setAttribute('onclick', `flipCard(${newId})`)
+    newEditButton.innerHTML = "Edit Card"
+    // Generate delete button
+    let newDeleteButton = document.createElement('button')
+    newDeleteButton.setAttribute('type', 'button')
+    // newDeleteButton.setAttribute('onclick', `flipCard(${newId})`)
+    newDeleteButton.innerHTML = "Delete Card"
+
 
     div.appendChild(newFront)
     div.appendChild(newFlipButton)
+    div.appendChild(newEditButton)
+    div.appendChild(newDeleteButton)
   }
 
 }
