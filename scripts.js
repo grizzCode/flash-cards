@@ -3,9 +3,9 @@ let cardIndex = [1,2,3]
 let rowNums = 1
 //Accumulator for row numbers (formatting)
 let cards = [
-  {id:1, front: "Front String A", back: "Back String A"},
-  {id:2, front: "Front String B", back: "Back String B"},
-  {id:3, front: "Front String C", back: "Back String C"},
+  {front: "Front String A", back: "Back String A"},
+  {front: "Front String B", back: "Back String B"},
+  {front: "Front String C", back: "Back String C"},
 ]
 
 //Flips given card over when clicked
@@ -17,15 +17,15 @@ function flipCard(id){
 
 document.getElementById('newCardButton').onclick = () => {
   // Retrieves status of card index and incriments.
-  let id = cardIndex.length + 1;
-  cardIndex.push(id)
+  let newId = cardIndex.length + 1;
+  cardIndex.push(newId)
 
   //creates new div for formatting
   let row = document.createElement('row');
   document.body.appendChild(row);
   let div = document.createElement('div');
   div.setAttribute('class', 'four columns');
-  div.setAttribute('id', id);
+  div.setAttribute('id', newId);
   
   //create user input area for front of card:
   let form = document.createElement('form')
@@ -60,8 +60,10 @@ document.getElementById('newCardButton').onclick = () => {
     // let newCardId = id
     var inputVal1 = document.getElementById("input1").value;
     var inputVal2 = document.getElementById("input2").value;
-    console.log(inputVal1)
-    console.log(inputVal2)
+    cards.push({
+      front: inputVal1,
+      back: inputVal2
+    });
   }
 
 }
