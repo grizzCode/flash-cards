@@ -15,6 +15,10 @@ function flipCard(id){
     document.getElementById(id).innerHTML = `${back}`;
 }
 
+function deleteCard(id) {
+  document.getElementById(id).remove()
+}
+  
 
 //############### CREATE NEW CARD #################
 document.getElementById('newCardButton').onclick = () => {
@@ -87,7 +91,7 @@ document.getElementById('newCardButton').onclick = () => {
     // Generate delete button
     let newDeleteButton = document.createElement('button')
     newDeleteButton.setAttribute('type', 'button')
-    // newDeleteButton.setAttribute('onclick', `flipCard(${newId})`)
+    newDeleteButton.setAttribute('onclick', `deleteCard(${newId})`)
     newDeleteButton.innerHTML = "Delete Card"
 
 
