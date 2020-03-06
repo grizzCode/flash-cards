@@ -1,7 +1,8 @@
-let cardIndex = [1,2,3]
 // Accumulator for card ID's
-let rowNums = 1
-//Accumulator for row numbers (formatting)
+let cardIndex = [1,2,3]
+
+
+// Array for card data:
 let cards = [
   {front: "Front String A", back: "Back String A"},
   {front: "Front String B", back: "Back String B"},
@@ -15,6 +16,7 @@ function flipCard(id){
 }
 
 
+//############### CREATE NEW CARD #################
 document.getElementById('newCardButton').onclick = () => {
   // Retrieves status of card index and incriments.
   let newId = cardIndex.length + 1;
@@ -25,10 +27,11 @@ document.getElementById('newCardButton').onclick = () => {
   document.body.appendChild(row);
   let div = document.createElement('div');
   div.setAttribute('class', 'four columns');
-  div.setAttribute('id', newId);
-  
+  div.setAttribute('id', `newDiv${newId}`);
+
   //create user input area for front of card:
   let form = document.createElement('form')
+    form.setAttribute('id', 'newForm')
     div.appendChild(form)
   let input1 = document.createElement('input')
     input1.setAttribute('type', 'text');
@@ -64,10 +67,12 @@ document.getElementById('newCardButton').onclick = () => {
       back: inputVal2
     });
     // clear form from new card:
-    document.getElementById('input1').remove();
-    document.getElementById('input2').remove();
-    document.getElementById('saveButton').remove();
+    document.getElementById('newForm').remove();
+
     // display new card front:
+    let newFront = document.createElement('p')
+    newFront.innerHTML = cards[(newId-1)].front
+    div.appendChild(newFront)
   }
 
 }
