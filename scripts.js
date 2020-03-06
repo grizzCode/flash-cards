@@ -57,13 +57,17 @@ document.getElementById('newCardButton').onclick = () => {
   
   //Obatin input values once user enters them:
   document.getElementById('saveButton').onclick = () => {
-    // let newCardId = id
-    var inputVal1 = document.getElementById("input1").value;
-    var inputVal2 = document.getElementById("input2").value;
+    let inputVal1 = document.getElementById('input1').value;
+    let inputVal2 = document.getElementById('input2').value;
     cards.push({
       front: inputVal1,
       back: inputVal2
     });
+    // clear form from new card:
+    document.getElementById('input1').remove();
+    document.getElementById('input2').remove();
+    document.getElementById('saveButton').remove();
+    // display new card front:
   }
 
 }
