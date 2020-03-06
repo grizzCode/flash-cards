@@ -21,14 +21,14 @@ function deleteCard(id) {
 
 //################ EDIT CARD ####################
 function editCard(id ) {
-  
+  document.getElementById(id).remove()
 
   //creates new div for formatting
   let row = document.createElement('row');
   document.body.appendChild(row);
   let div = document.createElement('div');
   div.setAttribute('class', 'four columns');
-  div.setAttribute('id', `${newId}`);
+  div.setAttribute('id', `${id}`);
   
 
   //create user input area for front of card:
@@ -73,21 +73,21 @@ function editCard(id ) {
 
     // display new card front:
     let newFront = document.createElement('p')
-    newFront.innerHTML = cards[(newId-1)].front
+    newFront.innerHTML = cards[(id-1)].front
     // generate flip card button:
     let newFlipButton = document.createElement('button')
     newFlipButton.setAttribute('type', 'button')
-    newFlipButton.setAttribute('onclick', `flipCard(${newId})`)
+    newFlipButton.setAttribute('onclick', `flipCard(${id})`)
     newFlipButton.innerHTML = "Flip Card"
     // generate edit card button:
     let newEditButton = document.createElement('button')
     newEditButton.setAttribute('type', 'button')
-    // newDeleteButton.setAttribute('onclick', `flipCard(${newId})`)
+    newEditButton.setAttribute('onclick', `editCard(${newId})`)
     newEditButton.innerHTML = "Edit Card"
     // Generate delete button
     let newDeleteButton = document.createElement('button')
     newDeleteButton.setAttribute('type', 'button')
-    newDeleteButton.setAttribute('onclick', `deleteCard(${newId})`)
+    newDeleteButton.setAttribute('onclick', `deleteCard(${id})`)
     newDeleteButton.innerHTML = "Delete Card"
 
 
