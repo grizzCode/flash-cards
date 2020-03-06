@@ -27,7 +27,8 @@ document.getElementById('newCardButton').onclick = () => {
   document.body.appendChild(row);
   let div = document.createElement('div');
   div.setAttribute('class', 'four columns');
-  div.setAttribute('id', `newDiv${newId}`);
+  div.setAttribute('id', `${newId}`);
+  
 
   //create user input area for front of card:
   let form = document.createElement('form')
@@ -72,7 +73,14 @@ document.getElementById('newCardButton').onclick = () => {
     // display new card front:
     let newFront = document.createElement('p')
     newFront.innerHTML = cards[(newId-1)].front
+    
+    let newFlipButton = document.createElement('button')
+    newFlipButton.setAttribute('type', 'button')
+    newFlipButton.setAttribute('onclick', `flipCard(${newId})`)
+    newFlipButton.innerHTML = "Flip Card"
+
     div.appendChild(newFront)
+    div.appendChild(newFlipButton)
   }
 
 }
