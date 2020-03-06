@@ -5,8 +5,14 @@
   display: flex;
   justify-content: center;
   padding-top: 45px;
+  margin: 10px!important;
 }
 
 button {
   margin: 30px!important;
+}
+
+nav {
+  border: 2px solid grey;
+  border-radius: 2px;
 }

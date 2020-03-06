@@ -8,6 +8,7 @@ let cards = [
   {id:3, front: "Front String C", back: "Back String C"},
 ]
 
+//Flips given card over when clicked
 function flipCard(id){
     let back = cards[(id-1)].back
     document.getElementById(id).innerHTML = `${back}`;
@@ -15,30 +16,20 @@ function flipCard(id){
 
 
 document.getElementById('newCardButton').onclick = () => {
+  // Retrieves status of card index and incriments.
   let id = cardIndex.length + 1;
   cardIndex.push(id)
 
-  if (id % 3 == 0) {
-    let row = document.createElement('row');
-    document.body.appendChild(row);
-    let div = document.createElement('div');
-    div.setAttribute('class', 'four columns');
-    div.setAttribute('id', id);
-
-    let front = document.createElement('form')
-    front.setAttribute('placeholder', "New Card Front")
-    
-    row.appendChild(div);
-  }
-
+  //creates new div for formatting
+  let row = document.createElement('row');
+  document.body.appendChild(row);
   let div = document.createElement('div');
-    div.setAttribute('class', 'four columns');
-    div.setAttribute('id', id);
+  div.setAttribute('class', 'four columns');
+  div.setAttribute('id', id);
+  div.innerHTML = "This is a new card."
+ 
+  
+  row.appendChild(div);
 
-  let front = document.createElement('text-input')
-    front.setAttribute('placeholder', "New Card Front")
-    
-  document.body.appendChild(div);
-  div.appendChild(front);
 }
 
